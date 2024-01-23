@@ -6,8 +6,8 @@ This browser based web application to ...
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-* My name is David(SungJin) Suh
-* My name is Seogin Hong and I am so happy with you guys
+* My name is Annyn, and I have a bird.
+* My name is Annyn, and I have a bird.
 * My name is Annyn, and I have a bird.
 * ...
 	
