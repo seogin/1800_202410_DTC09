@@ -4,3 +4,7 @@
 * Green (Secondary): #08A139
 * White (Quaternary): #FFFFFF
 */
+
+.btn-primary {
+    background-color: #86EAAA !important;
+}
