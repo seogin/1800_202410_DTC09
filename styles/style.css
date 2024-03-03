@@ -144,11 +144,8 @@ main::before {
     opacity: 0.5;
 }
 
-<<<<<<< HEAD
+
 #background_airquality::before {
-=======
-main::before {
->>>>>>> refs/remotes/origin/main
     content: '';
     position: absolute;
     top: 0;
