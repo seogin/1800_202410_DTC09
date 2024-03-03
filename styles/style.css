@@ -53,9 +53,13 @@
     opacity: 0.5;
 }
 
+a {
+    text-decoration: none;
+}
+
 .logo-name {
-            color: #0B82E6;
-            font-size: 1.5rem;
+    color: #0B82E6;
+    font-size: 1.5rem;
 }
 
 .form-control {
