@@ -151,4 +151,8 @@ main::before {
     .signup-section {
         min-height: 41vh;
     }
+
+    main {
+        margin-top: 50px;
+    }
 }
