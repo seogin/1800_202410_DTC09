@@ -52,3 +52,60 @@
     z-index: -1;
     opacity: 0.5;
 }
+
+.logo-name {
+            color: #0B82E6;
+            font-size: 1.5rem;
+}
+
+.form-control {
+    background-color: #e8f4ea;
+}
+
+.form-control:focus {
+    border-color: #08A139;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(8, 161, 57, 0.6);
+}
+
+.social-btn {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.signup-section {
+    color: gray;
+    padding: 50px;
+    background-image: url('../images/sign-up-background-img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-section {
+    padding: 50px;
+}
+
+.btn-login-primary {
+    background-color: #86EAAA !important;
+    border-color: #86EAAA;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.btn-log-in-primary:hover {
+    background-color: #08A139 !important;
+    border-color: #08A139;
+}
+
+.btn-outline-light {
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+}

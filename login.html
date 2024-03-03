@@ -10,22 +10,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap Library CSS CDN go here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Boostrap Library JS CDN  go here -->
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <!-- Other libraries go here -->
 
     <!-- Link to styles of your own -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
 <body>
-
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
-
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 login-section">
+                <div class="mb-5">
+                    <img src="./images/AirHealthLogo.png" alt="Logo" width="50" height="50"
+                        class="align-text-center rounded-circle" style="margin-right: 10px;">
+                    <span class="logo-name">AirHealth</span>
+                </div>
+                <div class="text-center">
+                    <h1>Login to Your Account</h1>
+                    <p class="mt-4 mb-2">Login using social networks</p>
+                    <div class="mb-3 d-flex justify-content-center">
+                        <span class="social-btn"><i class="fab fa-facebook-f">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#316FF6" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                                </svg>
+                            </i></span>
+                        <span class="social-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google"
+                                width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ea4335"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M20.945 11a9 9 0 1 1 -3.284 -5.997l-2.655 2.392a5.5 5.5 0 1 0 2.119 6.605h-4.125v-3h7.945z" />
+                            </svg>
+                            <i class="fab fa-google"></i></span>
+                        <span class="social-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin"
+                                width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0077b5"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                                <path d="M8 11l0 5" />
+                                <path d="M8 8l0 .01" />
+                                <path d="M12 16l0 -5" />
+                                <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+                            </svg>
+                            <i class="fab fa-linkedin-in"></i></span>
+                    </div>
+                    <p class="text-center text-secondary">OR</p>
+                    <input type="email" class="form-control mb-3" placeholder="Email">
+                    <input type="password" class="form-control mb-3" placeholder="Password">
+                    <button class="btn btn-login-primary w-100">Sign In</button>
+                </div>
+            </div>
+            <div
+                class="d-flex flex-column col-md-6 text-center signup-section justify-content-center align-items-center">
+                <h1 class="mb-5">New Here?</h1>
+                <p class="mb-2">Sign up and discover your air!</p>
+                <button class="btn btn-outline-light w-50 mt-2">Sign Up</button>
+            </div>
+        </div>
+    </div>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
