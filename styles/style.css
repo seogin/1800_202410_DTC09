@@ -69,6 +69,7 @@ a {
 
 .form-control {
     background-color: #e8f4ea;
+    border-radius: 10px;
 }
 
 .form-control:focus {
@@ -208,11 +209,6 @@ main::before {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-right: 0;
-}
-
-.form-control {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 
 .locations-section {
