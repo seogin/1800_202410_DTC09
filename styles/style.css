@@ -204,7 +204,42 @@ main::before {
     height: 100%
 }
 
-@media (max-width: 768px) {
+.input-group-text {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-right: 0;
+}
+
+.form-control {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.locations-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+.locations-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/locations-background-img.jpg');
+    background-size: 2000px 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+@media (max-width: 600px) {
     .login-section {
         padding-top: 0px;
     }
@@ -215,5 +250,10 @@ main::before {
 
     main {
         margin-top: 50px;
+    }
+
+    .locations-section {
+        display: inline-block;
+        text-align: center;
     }
 }
