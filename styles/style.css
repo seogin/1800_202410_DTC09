@@ -125,11 +125,23 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url('../images/recommendations.jpeg');
-    background-size: cover;
+    background-size: 2000px 1000px;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    z-index: -1;
+    opacity: 0.5;
 }
 
 @media (max-width: 768px) {
