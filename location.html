@@ -20,6 +20,14 @@
 
 
     <!-- Other libraries go here -->
+    <!-- Other libraries go here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/style.css">
@@ -33,60 +41,11 @@
     <!------------------------------>
     <!-- Stuff for body goes here -->
 
-    <!-- TODO: Navbar -->
-
-    <!-- <nav id="navbarPlaceholder"></nav> -->
-
-    <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="./images/AirHealthLogo.png" alt="Logo" width="50" height="50"
-                    class="align-text-center rounded-circle" style="margin-right: 10px;">
-                AirHealth</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">AirHealth</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item" style="padding-bottom:20px;">
-                            <a class="nav-link active" aria-current="page" href="airquality.html">Air Quality</a>
-                        </li>
-                        <li class="nav-item" style="padding-bottom:20px;">
-                            <a class="nav-link" href="recommendations.html">Tips/Recommendations</a>
-                        </li>
-                        <li class="nav-item" style="padding-bottom:20px;">
-                            <a class="nav-link" href="events.html">Upcoming Health Event</a>
-                        </li>
-                        <li class="nav-item" style="padding-bottom:20px;">
-                            <a class="nav-link" href="#">Location</a>
-                        </li>
-                        <li class="nav-item" style="padding-bottom:20px;">
-                            <a class="nav-link" href="weather.html">Weather</a>
-                        </li>
-                        <li class="nav-item" style="padding-bottom:20px;">
-                            <a class="nav-link" href="login.html"><svg xmlns="http://www.w3.org/2000/svg" width="32"
-                                    height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                                    <path fill-rule="evenodd"
-                                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                                </svg>
-                                Profile</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- our own navbar goes here -->
+    <nav id="navbarPlaceholder"></nav>
 
     <!-- Location -->
-    <main class="container mx-auto locations-section">
+    <main class="container mx-auto locations-section" style="padding-top: 80px;">
         <h1 class="my-5">
             Search for Location
         </h1>
@@ -109,10 +68,12 @@
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
-    <script src="./scripts/skeleton.js"></script>
 
     <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
+    <script src="./scripts/firebaseAPI_TEAM99.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/main.js"></script>
 
 </body>
 
