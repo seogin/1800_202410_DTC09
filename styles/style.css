@@ -294,8 +294,8 @@ a {
     color: #fff;
     text-decoration: none;
 }
-  
-.p-menu1{
+
+.p-menu1 {
     height: 100%;
 }
 
@@ -328,25 +328,25 @@ a {
     display: none;
 }
 
-#toggle1:checked + div .hamburger1 .top {
+#toggle1:checked+div .hamburger1 .top {
     -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    transform: rotate(-45deg);
     margin-top: 22.5px;
 }
 
-#toggle1:checked + div .hamburger1 .meat {
+#toggle1:checked+div .hamburger1 .meat {
     -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    transform: rotate(45deg);
     margin-top: -5px;
 }
 
-#toggle1:checked + div .hamburger1 .bottom {
+#toggle1:checked+div .hamburger1 .bottom {
     -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
 }
 
-#toggle1:checked ~ .menu1 {
-    height: 490px;
+#toggle1:checked~.menu1 {
+    height: 600px;
 }
 
 
@@ -387,25 +387,25 @@ a {
 
 
 @media (max-width: 600px) {
-.login-section {
-    padding-top: 0px;
-}
+    .login-section {
+        padding-top: 0px;
+    }
 
-.signup-section {
-    min-height: 41vh;
-}
+    .signup-section {
+        min-height: 41vh;
+    }
 
-main {
-    margin-top: 50px;
-}
+    main {
+        margin-top: 50px;
+    }
 
-.locations-section {
-    display: inline-block;
-    text-align: center;
-}
+    .locations-section {
+        display: inline-block;
+        text-align: center;
+    }
 
-.weather-section h1 {
-    padding-top: 0px !important;
-    margin-top: 0px !important;
-}
+    .weather-section h1 {
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+    }
 }
