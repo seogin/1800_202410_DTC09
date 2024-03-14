@@ -131,7 +131,7 @@ main {
     min-height: 100vh;
 }
 
-main::before {
+#background_recommendations::before {
     content: '';
     position: absolute;
     top: 0;
@@ -175,7 +175,7 @@ main::before {
     width: 80%;
 }
 
-.events-section::before {
+#background_events::before {
     content: '';
     position: absolute;
     top: 0;
@@ -221,7 +221,7 @@ main::before {
     min-height: 100vh;
 }
 
-.locations-section::before {
+#background_location::before {
     content: '';
     position: absolute;
     top: 0;
@@ -245,7 +245,7 @@ main::before {
     min-height: 100vh;
 }
 
-.weather-section::before {
+#background_weather::before {
     content: '';
     position: absolute;
     top: 0;

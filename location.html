@@ -25,7 +25,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
@@ -45,10 +45,12 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- Location -->
-    <main class="container mx-auto locations-section" style="padding-top: 80px;">
-        <h1 class="my-5">
-            Search for Location
-        </h1>
+    <div id="background_location" class="mt-5">
+        <div class="m-5">
+            <h1 class="flex justify-center font-bold text-2xl">
+                Search for Location
+            </h1>
+        </div>
         <!-- <input type="search" class="form-control mb-3" placeholder="Search"> -->
         <div class="input-group" style="width: 80%; margin-left: auto; margin-right: auto;">
             <span class="input-group-text">
@@ -63,7 +65,7 @@
             <input type="text" class="form-control" placeholder="Search"
                 style="font-size: 25px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
         </div>
-    </main>
+    </div>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
