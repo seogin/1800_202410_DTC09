@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Air Quality Check</title>
+  <style>
+    /* Additional custom styles can go here */
+    #results {
+      transition: border-color 0.3s;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <div class="min-h-screen flex flex-col justify-center items-center p-4">
+    <h1 class="text-3xl font-bold mb-6">Air Quality Information</h1>
+    <div id="results" class="w-full max-w-xl text-left p-6 rounded shadow-lg border-2 border-gray-200 bg-white"></div>
+  </div>
+  <script src="./scripts/airquality.js"></script>
+</body>
+
+</html>
