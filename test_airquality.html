@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Air Quality Check</title>
+  <style>
+    /* Additional custom styles can go here */
+    #results {
+      height: 300px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <div class="min-h-screen flex flex-col justify-center items-center">
+    <h1 class="text-2xl font-bold mb-4">Air Quality Check</h1>
+    <button id="checkAirQuality" class="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Check Air Quality
+    </button>
+    <pre id="results" class="w-full max-w-xl text-left p-4 rounded shadow"></pre>
+  </div>
+  <script src="./scripts/airquality.js"></script>
+</body>
+
+</html>
