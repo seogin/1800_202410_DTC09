@@ -5,3 +5,4 @@ node_modules/
 scripts/firebaseAPI_TEAM99.js
 scripts/airquality.js
 scripts/recommendation.js
+scripts/location.js
