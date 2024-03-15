@@ -4,3 +4,4 @@ node_modules/
 .vscode/
 scripts/firebaseAPI_TEAM99.js
 scripts/airquality.js
+scripts/recommendation.js
