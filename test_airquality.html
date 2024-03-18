@@ -5,15 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>City Latitude and Longitude Finder</title>
+  
 </head>
 
 <body>
-  <h2>Find Latitude and Longitude</h2>
+  <h2>Find Location</h2>
   <form id="locationForm">
     <input type="text" id="cityInput" placeholder="Enter a city name" required>
     <button type="submit">Search</button>
   </form>
-  <div id="result"></div>
+  <div id="result" class="w-full max-w-xl text-left p-6 rounded shadow-lg border-2 border-gray-200 bg-white"></div>
 
   <script src="./scripts/location.js"></script>
 </body>
