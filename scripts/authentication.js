@@ -33,3 +33,14 @@ var uiConfig = {
   };
 
   ui.start('#firebaseui-auth-container', uiConfig)
+
+  document.getElementById('signOutButton').addEventListener('click', function() {
+    firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        console.log('User signed out.');
+        window.location.href = "index.html";
+    }).catch(function(error) {
+        // An error happened.
+        console.error('Error signing out:', error);
+    });
+});
