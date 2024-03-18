@@ -301,6 +301,7 @@ a {
 
 #navbar {
     padding: 10px;
+    background-color: rgb(249, 248, 248);
 }
 
 /* Hamburger */
@@ -315,7 +316,7 @@ a {
 }
 
 .hamburger1 div {
-    background-color: rgb(61, 61, 61);
+    background-color: #0B82E6;
     position: relative;
     width: 40px;
     height: 5px;
@@ -346,14 +347,14 @@ a {
 }
 
 #toggle1:checked~.menu1 {
-    height: 600px;
+    height: 510px;
 }
 
 
 /* Menu */
 .menu1 {
     width: 100%;
-    background-color: #f6f9ff;
+    background-color: #e8effb;
     margin: 0;
     display: -ms-grid;
     display: flex;
@@ -379,8 +380,8 @@ a {
 }
 
 .link1:hover {
-    background-color: rgb(252, 252, 252);
-    color: rgb(61, 61, 61);
+    background-color: rgb(245, 244, 244);
+    color: rgb(7, 61, 186);
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
