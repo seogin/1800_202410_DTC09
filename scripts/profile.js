@@ -1,25 +1,41 @@
 function getNameFromAuth() {
   firebase.auth().onAuthStateChanged(user => {
-    // Check if a user is signed in:
     if (user) {
-      // Do something for the currently logged-in user here: 
-      console.log(user.uid); //print the uid in the browser console
-      console.log(user.displayName);  //print the user name in the browser console
-      userName = user.displayName;
+      console.log(user.uid); // Print the uid in the browser console
+      console.log(user.displayName); // Print the user name in the browser console
+      let userName = user.displayName;
 
-      //method #1:  insert with JS
-      //document.getElementById("name-goes-here").innerText = userName;    
-
-      //method #2:  insert using jquery
-      $("#name-goes-here").text(userName); //using jquery
-
-      //method #3:  insert using querySelector
-      //document.querySelector("#name-goes-here").innerText = userName
+      // Method #2: Insert using jQuery, corrected event listener syntax
+      $("#pollutant").on("click", () => checkPollutant(user));
+      $("#name-goes-here").text(userName); // Using jQuery
 
     } else {
-      // No user is signed in.
       console.log("No user is logged in");
     }
   });
 }
-getNameFromAuth(); //run the function
+
+function checkPollutant(user) {
+  if (user) {
+    const userID = user.uid;
+
+    // Define a path to the subcollection for this user
+    const userPollutantPath = db.collection("users").doc(userID).collection("pollutant");
+
+    // Assuming you want a single document for pollutants which you can update
+    userPollutantPath.doc(userID).set({
+      CO: document.getElementById("CO").checked,
+      NO2: document.getElementById("NO2").checked,
+      O3: document.getElementById("O3").checked,
+      PM10: document.getElementById("PM10").checked,
+      PM25: document.getElementById("PM2.5").checked, // Ensure the ID matches your HTML element
+      SO2: document.getElementById("SO2").checked
+    }).then(() => {
+      console.log("Pollutant data successfully written!");
+    }).catch((error) => {
+      console.error("Error writing pollutant data:", error);
+    });
+  }
+}
+
+getNameFromAuth(); // Run the function
