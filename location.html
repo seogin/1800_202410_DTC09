@@ -31,7 +31,17 @@
 
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/style.css">
-
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 40
+        }
+    </style>
 </head>
 
 <body>
@@ -45,31 +55,30 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- Location -->
-    <div id="background_location" class="mt-5">
-        <div class="m-5">
-            <h1 class="flex justify-center font-bold text-2xl">
-                Search for Location
-            </h1>
-        </div>
+    <div id="background_location" class="flex flex-col mt-5 justify-center items-center gap-4">
         <!-- <input type="search" class="form-control mb-3" placeholder="Search"> -->
-        <div class="input-group" style="width: 80%; margin-left: auto; margin-right: auto;">
-            <span class="input-group-text">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="44"
-                    height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0B82E6" fill="none"
+        <div class="flex items-center w-[85%] mt-16 justify-center">
+            <!-- <span class="input-group-text">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="30"
+                    height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0B82E6" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                     <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
                 </svg>
-            </span>
-            <form id="locationForm">
-                <input type="text" id="cityInput" placeholder="Enter a city name" required style="font-size: 25px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
-                <button type="submit">Search</button>
+            </span> -->
+            <form class="flex gap-2" id="locationForm">
+                <input type="text" id="cityInput" placeholder="Enter a city name"
+                    class="border-none h-12 text-center rounded-full text-xl">
+                <button type="submit">
+                    <span class="material-symbols-outlined mt-2" style="font-size: 35px;">
+                        search
+                    </span>
+                </button>
             </form>
-                
-                
         </div>
-    <div id="result" class="w-full max-w-xl text-left p-6 rounded shadow-lg border-2 border-gray-200 bg-white"></div>
+        <div id="result">
+        </div>
     </div>
 
     <!---------------------------------------------->
