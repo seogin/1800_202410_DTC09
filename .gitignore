@@ -8,3 +8,4 @@ scripts/recommendation.js
 scripts/location.js
 scripts/profile.js
 scripts/weather.js
+scripts/events.js
