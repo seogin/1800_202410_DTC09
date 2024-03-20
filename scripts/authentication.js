@@ -60,3 +60,14 @@ document.getElementById('signOutButton').addEventListener('click', function() {
       console.error('Error signing out:', error);
   });
 });
+
+function logOut(){
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    console.log('User signed out.');
+    window.location.href = "index.html";
+  }).catch(function(error) {
+    // An error happened.
+    console.error('Error signing out:', error);
+  });
+};
