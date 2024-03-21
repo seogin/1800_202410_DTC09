@@ -11,3 +11,6 @@ scripts/weather.js
 scripts/events.js
 scripts/profile.js
 
+
+.gitignore
+scripts/main.js
