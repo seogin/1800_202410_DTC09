@@ -18,23 +18,23 @@ async function getForecast(url) {
     const todayTempMin = Math.ceil(data.list[0].main.temp_min - 273);
     const todayTempMax = Math.ceil(data.list[0].main.temp_max - 273);
 
-    const tomorrowDate = new Date(data.list[1].dt * 1000);
+    const tomorrowDate = new Date(data.list[8].dt * 1000);
     const formattedTomorrowDate = tomorrowDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric'});
-    const tomorrowTemp = Math.ceil(data.list[1].main.temp - 273);
-    const tomorrowTempMin = Math.ceil(data.list[1].main.temp_min - 273);
-    const tomorrowTempMax = Math.ceil(data.list[1].main.temp_max - 273);
+    const tomorrowTemp = Math.ceil(data.list[8].main.temp - 273);
+    const tomorrowTempMin = Math.ceil(data.list[8].main.temp_min - 273);
+    const tomorrowTempMax = Math.ceil(data.list[8].main.temp_max - 273);
 
-    const dayAfterTomorrowDate = new Date(data.list[9].dt * 1000);
+    const dayAfterTomorrowDate = new Date(data.list[16].dt * 1000);
     const formattedDayAfterTomorrowDate = dayAfterTomorrowDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric'});
-    const dayAfterTomorrowTemp = Math.ceil(data.list[9].main.temp - 273);
-    const dayAfterTomorrowTempMin = Math.ceil(data.list[9].main.temp_min - 273);
-    const dayAfterTomorrowTempMax = Math.ceil(data.list[9].main.temp_max - 273);
+    const dayAfterTomorrowTemp = Math.ceil(data.list[16].main.temp - 273);
+    const dayAfterTomorrowTempMin = Math.ceil(data.list[16].main.temp_min - 273);
+    const dayAfterTomorrowTempMax = Math.ceil(data.list[16].main.temp_max - 273);
 
-    const twoDaysAfterTomorrowDate = new Date(data.list[17].dt * 1000);
+    const twoDaysAfterTomorrowDate = new Date(data.list[24].dt * 1000);
     const formattedTwoDaysAfterTomorrowDate = twoDaysAfterTomorrowDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric'});
-    const twoDaysAfterTomorrowTemp = Math.ceil(data.list[17].main.temp - 273);
-    const twoDaysAfterTomorrowTempMin = Math.ceil(data.list[17].main.temp_min - 273);
-    const twoDaysAfterTomorrowTempMax = Math.ceil(data.list[17].main.temp_max - 273);
+    const twoDaysAfterTomorrowTemp = Math.ceil(data.list[24].main.temp - 273);
+    const twoDaysAfterTomorrowTempMin = Math.ceil(data.list[24].main.temp_min - 273);
+    const twoDaysAfterTomorrowTempMax = Math.ceil(data.list[24].main.temp_max - 273);
 
     // Display the weather description
     const todayWeatherDescription = data.list[0].weather[0].description;
