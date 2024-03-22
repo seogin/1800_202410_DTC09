@@ -6,7 +6,17 @@ function getNameFromAuth() {
       let userName = user.displayName;
 
       // Method #2: Insert using jQuery, corrected event listener syntax
-      $("#pollutant").on("click", () => checkPollutant(user));
+      $("#pollutant").on("click", () => {
+        checkPollutant(user)
+        getPollutantPreferences(user, (userPreferences) => {
+          // Fetch and display air quality data with user preferences
+          fetchAirQualityData().then(data => {
+            displayAirQualityData(data, userPreferences); // Assuming this function handles the data correctly
+          }).catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+          });
+        });
+      });
       $("#name-goes-here").text(userName); // Using jQuery
 
     } else {
@@ -68,7 +78,7 @@ function rgbToHex(r, g, b) {
 
 // Function to initiate the fetch operation and return a promise
 function fetchAirQualityData() {
-  const url = 'https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyAmrsLsCTac2ioAb0ChDMdDsfMDVPJeAuM';
+  const url = 'https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyDtWxSnu-NjYmWH9K4utxzzaNmR9bY2Csg';
   const requestData = {
     universalAqi: true,
     location: {
@@ -109,18 +119,19 @@ function displayAirQualityData(data, userPreferences) {
     return;
   }
 
-  // Assuming the rgbToHex function has been defined elsewhere
-  const universalAqiColor = rgbToHex(
-    data.indexes[0].color.red,
-    data.indexes[0].color.green,
-    data.indexes[0].color.blue
-  );
+  // // Assuming the rgbToHex function has been defined elsewhere
+  // const universalAqiColor = rgbToHex(
+  //   data.indexes[0].color.red,
+  //   data.indexes[0].color.green,
+  //   data.indexes[0].color.blue
+  // );
 
   // Start constructing the HTML content
-  let htmlContent = `<div style="border-color: ${universalAqiColor};">`;
+  // let htmlContent = `<div style="border-color: ${universalAqiColor};">`;
 
   // Loop through each pollutant in the data and check user preferences
-  htmlContent += '<div><strong>Pollutants:</strong><ul>';
+  htmlContent =""
+  htmlContent += '<div><strong>Pollutants:</strong><ul><br>';
   data.pollutants.forEach(pollutant => {
     // Convert the pollutant code to uppercase because Firestore keys are usually case-sensitive
     if (userPreferences[pollutant.code.toUpperCase()]) {
@@ -128,7 +139,8 @@ function displayAirQualityData(data, userPreferences) {
         <p><strong>${pollutant.displayName} (${pollutant.fullName}):</strong> ${pollutant.concentration.value} ${pollutant.concentration.units}</p>
         <p><strong>Sources:</strong> ${pollutant.additionalInfo.sources}</p>
         <p><strong>Effects:</strong> ${pollutant.additionalInfo.effects}</p>
-      </li>`;
+      </li>
+      <br>`;
     }
   });
   htmlContent += '</ul></div>';
