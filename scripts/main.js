@@ -157,6 +157,7 @@ getForecast('http://api.openweathermap.org/data/2.5/forecast?q=vancouver&APPID=7
 
 function getWeatherIcon(description) {
     if (description.includes('cloud')) {
+<<<<<<< HEAD
         return '../images/cloud.png';
     } else if (description.includes('rain')) {
         return '../images/rain.png';
@@ -166,5 +167,16 @@ function getWeatherIcon(description) {
         return '../images/snow.png';
     } else {
         return '../images/default.png';
+=======
+        return './images/cloud.png';
+    } else if (description.includes('rain')) {
+        return './images/rain.png';
+    } else if (description.includes('sun')) {
+        return './images/sun.png';
+    } else if (description.includes('snow')) {
+        return './images/snow.png';
+    } else {
+        return './images/default.png';
+>>>>>>> refs/remotes/origin/main
     }
 }
