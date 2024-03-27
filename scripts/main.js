@@ -20,13 +20,6 @@ function insertNameFromFirestore() {
 
 insertNameFromFirestore();
 
-// Function to convert RGB color value to Hex
-function rgbToHex(r, g, b) {
-  return "#" + [r, g, b].map(x => {
-    const hex = Math.round(x * 255).toString(16);
-    return hex.length === 1 ? '0' + hex : hex;
-  }).join('');
-}
 
 // Function to initiate the fetch operation
 function fetchAirQualityData() {
@@ -69,8 +62,6 @@ function fetchAirQualityData() {
   // Function to display the air quality data with more details
   function displayAirQualityData(data) {
     // Converting RGB color value to Hex for Universal AQI and AQI (US)
-    const universalAqiColor = rgbToHex(data.indexes[0].color.red, data.indexes[0].color.green, data.indexes[0].color.blue);
-    const usAqiColor = data.indexes[1].color.green !== undefined ? rgbToHex(0, data.indexes[1].color.green, 0) : '#00FF00'; // Assuming green is the only color provided for US AQI
   
     const resultsElement = document.getElementById('results');
   
@@ -121,3 +112,59 @@ function fetchAirQualityData() {
   
   // Remember to call `fetchAirQualityData` to fetch and display the data
   document.addEventListener('DOMContentLoaded', fetchAirQualityData);
+
+async function getForecast(url) {
+    // Retrieve the local forecast
+    const response = await fetch(url);
+    const data = await response.json();
+    // console.log(data);
+
+    // Save the API response as a txt file
+    // Note: This part is not possible in client-side JavaScript due to security restrictions.
+    // You would need to use Node.js and the 'fs' module to write to a file.
+
+    // Parse the JSON data
+    // const vancouverWeather = JSON.parse(data);
+    // const localWeather = vancouverWeather['list'];
+
+    const todayDate = new Date(data.list[0].dt * 1000);
+    const formattedTodayDate = todayDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric'});
+    const todayTemp = Math.ceil(data.list[0].main.temp - 273);
+    const todayHumidity = Math.ceil(data.list[0].main.humidity);
+
+    // Display the weather description
+    const todayWeatherDescription = data.list[0].weather[0].description;
+
+    // Display the weather icon
+    const todayWeatherIcon = getWeatherIcon(todayWeatherDescription);
+
+    const weatherInfoDiv = document.getElementById('weather');
+    weatherInfoDiv.innerHTML += `
+      <div class="text-lg font-bold underline decoration-4 decoration-amber-200">Weather</div>
+      <div class="text-xs h-36 text-slate-400">
+      <img src="${todayWeatherIcon}" alt="weather-icon" class="mt-1 w-15 h-15 animate-[bounce-slow_1s_infinite]">
+      ${todayWeatherDescription}
+      </div>
+      <div class="mt-3">
+      ${todayHumidity}
+      <p class="text-[10px] px-1 text-slate-400 leading-3">Humidity</p>
+      </div>
+    `;
+}
+
+getForecast('http://api.openweathermap.org/data/2.5/forecast?q=vancouver&APPID=73e6dd36a2a073c414a629760ac198ce');
+
+
+function getWeatherIcon(description) {
+    if (description.includes('cloud')) {
+        return '../images/cloud.png';
+    } else if (description.includes('rain')) {
+        return '../images/rain.png';
+    } else if (description.includes('sun')) {
+        return '../images/sun.png';
+    } else if (description.includes('snow')) {
+        return '../images/snow.png';
+    } else {
+        return '../images/default.png';
+    }
+}
