@@ -114,14 +114,14 @@ getForecast('http://api.openweathermap.org/data/2.5/forecast?id=6173331&APPID=73
 
 function getWeatherIcon(description) {
     if (description.includes('cloud')) {
-        return '../images/cloud.png';
+        return './images/cloud.png';
     } else if (description.includes('rain')) {
-        return '../images/rain.png';
+        return './images/rain.png';
     } else if (description.includes('sun')) {
-        return '../images/sun.png';
+        return './images/sun.png';
     } else if (description.includes('snow')) {
-        return '../images/snow.png';
+        return './images/snow.png';
     } else {
-        return '../images/default.png';
+        return './images/default.png';
     }
 }

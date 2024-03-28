@@ -7,7 +7,7 @@
 
 .btn-primary {
     background-color: #86EAAA !important;
-    border-color: #86EAAA;
+    border-color: #86bfea;
     border-radius: 20px;
     margin-left: 20px;
     margin-right: 20px;
@@ -417,3 +417,14 @@ a {
         margin-top: 0px !important;
     }
 }
+
+@keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(-2.5%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
