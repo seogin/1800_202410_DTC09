@@ -42,17 +42,20 @@
         <h3 class="mb-2 text-xs text-slate-700 text-center">Preferences can be changed in the profile page.</h3>
         <form id="personalForm" class="flex flex-col">
           <div class="mt-4 flex-col flex">
-            <label class="text-base" for="pollutants">Name:</label>
-            <input class="my-2" type="text" id="name" placeholder="Enter your prefered name!" required>
-            <label class="my-2 text-base" for="pollutants">Cities:</label>
-            <div class="flex-row justify-between">
-              <input class="my-2" type="text" id="city" placeholder="Enter your prefered city" required>
-              <button class="py-0.25 px-2 mx-2 bg-white border-1 text-slate-400 border-blue-300" onclick="addCity" id="addCityButton">+</button><button  class="py-0.25 px-2.5 bg-white border-1 text-slate-400 border-blue-300" onclick="removeCity" id="removeCityButton">-</button>
+            <label class="text-base" for="userName">Name:</label>
+            <input class="my-2" type="text" id="name" value="" placeholder="Enter your prefered name!" required>
+            <label class="my-2 text-base" for="cityList">Cities:</label>
+            <div>
+              <div class="flex-row justify-between">
+                <input class="my-2" type="text" id="city" value="" placeholder="Enter your prefered city" required>
+                <button class="py-0.25 px-2 mx-2 bg-white border-1 text-slate-400 border-blue-300" onclick="addCity" id="addCityButton">+</button><button  class="py-0.25 px-2.5 bg-white border-1 text-slate-400 border-blue-300" onclick="removeCity" id="removeCityButton">-</button>
+              </div>
+              <input class="my-2 w-100" type="text" id="country" value="" placeholder="Enter country for better accuracy">
             </div>
           </div>
           <div class="flex flex-col py-2 mt-2">
           <label class="my-2  text-base" for="pollutants">What pollutants concern you most?</label>
-          <select class="my-2 text-slate-400" name="polutants" id="polutant1">
+          <select class="my-2 text-slate-400" name="pollutants" id="pollutant1">
             <option value="">Enter a pollutant</option>
             <option value="CO">Carbon Monoxide</option>
             <option value="NO">Nitrogen Dioxide</option>
@@ -61,7 +64,7 @@
             <option value="25">PM2.5</option>
             <option value="SO">Sulfur Dioxide</option>
           </select>
-          <select class="my-2 text-slate-400" name="polutants" id="polutant2">
+          <select class="my-2 text-slate-400" name="pollutants" id="pollutant2">
             <option value="">Enter a pollutant</option>
             <option value="CO">Carbon Monoxide</option>
             <option value="NO">Nitrogen Dioxide</option>
@@ -70,7 +73,7 @@
             <option value="25">PM2.5</option>
             <option value="SO">Sulfur Dioxide</option>
           </select>
-          <select class="my-2 text-slate-400" name="polutants" id="polutant3">
+          <select class="my-2 text-slate-400" name="pollutants" id="pollutant3">
             <option value="">Enter a pollutant</option>
             <option value="CO">Carbon Monoxide</option>
             <option value="NO">Nitrogen Dioxide</option>
@@ -79,7 +82,7 @@
             <option value="25">PM2.5</option>
             <option value="SO">Sulfur Dioxide</option>
           </select>
-          <select class="my-2 text-slate-400" name="Primary Pollutant Concern" id="polutant4" value="Primary Pollutant Concern" class="w-20">
+          <select class="my-2 text-slate-400" name="Primary Pollutant Concern" id="pollutant4" value="Primary Pollutant Concern" class="w-20">
             <option value="">Enter a pollutant</option>
             <option value="CO">Carbon Monoxide</option>
             <option value="NO">Nitrogen Dioxide</option>
@@ -88,7 +91,7 @@
             <option value="25">PM2.5</option>
             <option value="SO">Sulfur Dioxide</option>
           </select>
-          <select class="my-2 text-slate-400" name="polutants" id="polutant5">
+          <select class="my-2 text-slate-400" name="pollutants" id="pollutant5">
             <option value="">Enter a pollutant</option>
             <option value="CO">Carbon Monoxide</option>
             <option value="NO">Nitrogen Dioxide</option>
@@ -97,7 +100,7 @@
             <option value="25">PM2.5</option>
             <option value="SO">Sulfur Dioxide</option>
           </select>
-          <select class="my-2 text-slate-400" name="polutants" id="polutant6">
+          <select class="my-2 text-slate-400" name="pollutants" id="pollutant6">
             <option value="">Enter a pollutant</option>
             <option value="CO">Carbon Monoxide</option>
             <option value="NO">Nitrogen Dioxide</option>
@@ -138,7 +141,8 @@
               <label for="vehicle3">Youth concerns.</label>
             </div>
           </div>
-          <button class="bg-amber-100 my-2 rounded-xl border-b-amber-300 border-r-amber-300 border-b-4 border-r-4" type="submit">Submit</button>
+          <button class="bg-amber-100 my-2 rounded-xl border-b-amber-300 border-r-amber-300 border-b-4 border-r-4" onclick="saveUserInfo()" type="button">Submit</button>
+          <a href="./main.html" class="bg-teal-100 my-2 rounded-xl border-b-teal-300 border-r-teal-300 border-b-4 border-r-4 text-center">Start</a>
         </form>
       </div>
     </div>
@@ -147,6 +151,8 @@
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/form.js"></script>
+    <script src="./scripts/authentication.js"></script>
 </body>
 
 </html>

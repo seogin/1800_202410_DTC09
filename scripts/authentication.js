@@ -7,18 +7,32 @@ var uiConfig = {
         // Return type determines whether we continue the redirect automatically
         // or whether we leave that to developer to handle.
         var user = authResult.user;                            // get the user object from the Firebase authentication database
-         if (authResult.additionalUserInfo.isNewUser) {         //if new user
-             db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
-                    name: user.displayName,                    //"users" collection
-                    email: user.email,                         //with authenticated user's ID (user.uid)
-                                          //optional default profile info      
-										                         //optional default profile info
-             }).then(function () {
-                    console.log("New user added to firestore");
-                    window.location.assign("main.html");       //re-direct to main.html after signup
-             }).catch(function (error) {
-                    console.log("Error adding new user: " + error);
-             });
+        if (authResult.additionalUserInfo.isNewUser) {         //if new user
+              db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
+                      name: user.displayName,                    //"users" collection
+                      email: user.email,                         //with authenticated user's ID (user.uid)
+                      city: "",
+                      country: "",
+                      p1: "",
+                      p2: "",
+                      p3: "",
+                      p4: "",
+                      p5: "",
+                      p6: "",
+                      athletes: "",
+                      children: "",
+                      elderly: "",
+                      general: "",
+                      heart: "",
+                      lung: "",
+                      pregnant: ""
+              }
+            ).then(function () {
+                  console.log("New user added to firestore");
+                  window.location.assign("form.html");       //re-direct to main.html after signup
+            }).catch(function (error) {
+                  console.log("Error adding new user: " + error);
+            });
          } else {
              return true;
          }
