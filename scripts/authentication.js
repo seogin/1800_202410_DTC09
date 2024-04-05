@@ -13,19 +13,19 @@ var uiConfig = {
                       email: user.email,                         //with authenticated user's ID (user.uid)
                       city: "",
                       country: "",
-                      p1: "",
-                      p2: "",
-                      p3: "",
-                      p4: "",
-                      p5: "",
-                      p6: "",
-                      athletes: "",
-                      children: "",
-                      elderly: "",
-                      general: "",
-                      heart: "",
-                      lung: "",
-                      pregnant: ""
+                      // p1: "",
+                      // p2: "",
+                      // p3: "",
+                      // p4: "",
+                      // p5: "",
+                      // p6: "",
+                      // athletes: "",
+                      // children: "",
+                      // elderly: "",
+                      // general: "",
+                      // heart: "",
+                      // lung: "",
+                      // pregnant: ""
               }
             ).then(function () {
                   console.log("New user added to firestore");

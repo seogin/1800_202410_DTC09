@@ -48,7 +48,7 @@
             <div>
               <div class="flex-row justify-between">
                 <input class="my-2" type="text" id="city" value="" placeholder="Enter your prefered city" required>
-                <button class="py-0.25 px-2 mx-2 bg-white border-1 text-slate-400 border-blue-300" onclick="addCity" id="addCityButton">+</button><button  class="py-0.25 px-2.5 bg-white border-1 text-slate-400 border-blue-300" onclick="removeCity" id="removeCityButton">-</button>
+                <!-- <button class="py-0.25 px-2 mx-2 bg-white border-1 text-slate-400 border-blue-300" onclick="addCity" id="addCityButton">+</button><button  class="py-0.25 px-2.5 bg-white border-1 text-slate-400 border-blue-300" onclick="removeCity" id="removeCityButton">-</button> -->
               </div>
               <input class="my-2 w-100" type="text" id="country" value="" placeholder="Enter country for better accuracy">
             </div>
@@ -57,75 +57,75 @@
           <label class="my-2  text-base" for="pollutants">What pollutants concern you most?</label>
           <select class="my-2 text-slate-400" name="pollutants" id="pollutant1">
             <option value="">Enter a pollutant</option>
-            <option value="CO">Carbon Monoxide</option>
-            <option value="NO">Nitrogen Dioxide</option>
-            <option value="O3">Ozone</option>
-            <option value="10">PM10</option>
-            <option value="25">PM2.5</option>
-            <option value="SO">Sulfur Dioxide</option>
+            <option value="0">Carbon Monoxide</option>
+            <option value="1">Nitrogen Dioxide</option>
+            <option value="2">Ozone</option>
+            <option value="3">PM10</option>
+            <option value="4">PM2.5</option>
+            <option value="5">Sulfur Dioxide</option>
           </select>
           <select class="my-2 text-slate-400" name="pollutants" id="pollutant2">
             <option value="">Enter a pollutant</option>
-            <option value="CO">Carbon Monoxide</option>
-            <option value="NO">Nitrogen Dioxide</option>
-            <option value="O3">Ozone</option>
-            <option value="10">PM10</option>
-            <option value="25">PM2.5</option>
-            <option value="SO">Sulfur Dioxide</option>
+            <option value="0">Carbon Monoxide</option>
+            <option value="1">Nitrogen Dioxide</option>
+            <option value="2">Ozone</option>
+            <option value="3">PM10</option>
+            <option value="4">PM2.5</option>
+            <option value="5">Sulfur Dioxide</option>
           </select>
           <select class="my-2 text-slate-400" name="pollutants" id="pollutant3">
             <option value="">Enter a pollutant</option>
-            <option value="CO">Carbon Monoxide</option>
-            <option value="NO">Nitrogen Dioxide</option>
-            <option value="O3">Ozone</option>
-            <option value="10">PM10</option>
-            <option value="25">PM2.5</option>
-            <option value="SO">Sulfur Dioxide</option>
+            <option value="0">Carbon Monoxide</option>
+            <option value="1">Nitrogen Dioxide</option>
+            <option value="2">Ozone</option>
+            <option value="3">PM10</option>
+            <option value="4">PM2.5</option>
+            <option value="5">Sulfur Dioxide</option>
           </select>
           <select class="my-2 text-slate-400" name="Primary Pollutant Concern" id="pollutant4" value="Primary Pollutant Concern" class="w-20">
             <option value="">Enter a pollutant</option>
-            <option value="CO">Carbon Monoxide</option>
-            <option value="NO">Nitrogen Dioxide</option>
-            <option value="O3">Ozone</option>
-            <option value="10">PM10</option>
-            <option value="25">PM2.5</option>
-            <option value="SO">Sulfur Dioxide</option>
+            <option value="0">Carbon Monoxide</option>
+            <option value="1">Nitrogen Dioxide</option>
+            <option value="2">Ozone</option>
+            <option value="3">PM10</option>
+            <option value="4">PM2.5</option>
+            <option value="5">Sulfur Dioxide</option>
           </select>
           <select class="my-2 text-slate-400" name="pollutants" id="pollutant5">
             <option value="">Enter a pollutant</option>
-            <option value="CO">Carbon Monoxide</option>
-            <option value="NO">Nitrogen Dioxide</option>
-            <option value="O3">Ozone</option>
-            <option value="10">PM10</option>
-            <option value="25">PM2.5</option>
-            <option value="SO">Sulfur Dioxide</option>
+            <option value="0">Carbon Monoxide</option>
+            <option value="1">Nitrogen Dioxide</option>
+            <option value="2">Ozone</option>
+            <option value="3">PM10</option>
+            <option value="4">PM2.5</option>
+            <option value="5">Sulfur Dioxide</option>
           </select>
           <select class="my-2 text-slate-400" name="pollutants" id="pollutant6">
             <option value="">Enter a pollutant</option>
-            <option value="CO">Carbon Monoxide</option>
-            <option value="NO">Nitrogen Dioxide</option>
-            <option value="O3">Ozone</option>
-            <option value="10">PM10</option>
-            <option value="25">PM2.5</option>
-            <option value="SO">Sulfur Dioxide</option>
+            <option value="0">Carbon Monoxide</option>
+            <option value="1">Nitrogen Dioxide</option>
+            <option value="2">Ozone</option>
+            <option value="3">PM10</option>
+            <option value="4">PM2.5</option>
+            <option value="5">Sulfur Dioxide</option>
           </select>
           </div>
           <div class="flex flex-col my-2 mt-2">
             <span class="my-2">Other concerns?</span>
             <div class="text-base text-left">
-              <input type="checkbox" id="general" name="general" value="">
-              <label for="general">General concerns.</label>
+              <input type="checkbox" id="generalPopulation" name="generalPopulation" value="">
+              <label for="generalPopulation">General concerns.</label>
             </div>
             <div class="text-base text-left">
               <input type="checkbox" id="elderly" name="elderly" value="">
               <label for="elderly">Senior concerns.</label>
             </div>
             <div class="text-base text-left">
-              <input type="checkbox" id="lung" name="lung" value="">
+              <input type="checkbox" id="lungDiseasePopulation" name="lungDiseasePopulation" value="">
               <label for="vehicle3">Respritory concerns.</label>
             </div>
             <div class="text-base text-left">
-              <input type="checkbox" id="heart" name="heart" value="">
+              <input type="checkbox" id="heartDiseasePopulation" name="heartDiseasePopulation" value="">
               <label for="vehicle3">Heart concerns.</label>
             </div>
             <div class="text-base text-left">
@@ -133,7 +133,7 @@
               <label for="vehicle3">Athlete's concerns.</label>
             </div>
             <div class="text-base text-left">
-              <input type="checkbox" id="pregnant" name="pregnant" value="">
+              <input type="checkbox" id="pregnantWomen" name="pregnantWomen" value="">
               <label for="vehicle3">Expecting families concerns.</label>
             </div>
             <div class="text-base text-left">
@@ -141,8 +141,8 @@
               <label for="vehicle3">Youth concerns.</label>
             </div>
           </div>
-          <button class="bg-amber-100 my-2 rounded-xl border-b-amber-300 border-r-amber-300 border-b-4 border-r-4" onclick="saveUserInfo()" type="button">Submit</button>
-          <a href="./main.html" class="bg-teal-100 my-2 rounded-xl border-b-teal-300 border-r-teal-300 border-b-4 border-r-4 text-center">Start</a>
+          <button id="submit" class="bg-amber-100 my-2 rounded-xl border-b-amber-300 border-r-amber-300 border-b-4 border-r-4">Submit</button>
+          <!-- <a href="./main.html" class="bg-teal-100 my-2 rounded-xl border-b-teal-300 border-r-teal-300 border-b-4 border-r-4 text-center">Start</a> -->
         </form>
       </div>
     </div>
