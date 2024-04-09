@@ -1,4 +1,24 @@
-async function getForecast(url) {
+function insertCityFromFirestore() {
+    // Check if the user is logged in:
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            console.log(user.uid); // Let's know who the logged-in user is by logging their UID
+            currentUser = db.collection("users").doc(user.uid); // Go to the Firestore document of the user
+            currentUser.get().then(userDoc => {
+              // Get the city name
+              let cityName = userDoc.data().city;
+              console.log(cityName);
+              getForecast(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=73e6dd36a2a073c414a629760ac198ce`, cityName);
+            })
+        } else {
+            console.log("No user is logged in."); // Log a message when no user is logged in
+        }
+    })
+}
+
+insertCityFromFirestore();
+
+async function getForecast(url, cityName) {
     // Retrieve the local forecast
     const response = await fetch(url);
     const data = await response.json();
@@ -50,23 +70,26 @@ async function getForecast(url) {
 
     const weatherInfoDiv = document.getElementById('weather-info');
     weatherInfoDiv.innerHTML = `
-        <div class="flex mb-3 bg-gradient-to-r from-indigo-400 to-cyan-300 rounded-lg w-[80%]">
-            <div class="flex flex-col text-center p-3 w-[80%]">
-                <h4 class="text-2xl">${formattedTodayDate}</h4>
-                <h1 class="my-4">${todayTemp} &degC</h1>
-                <div class="flex justify-center gap-4">
-                    <p>Min: ${todayTempMin} &degC</p> 
-                    <p>Max: ${todayTempMax} &degC</p>
+            <div class="rounded-3xl my-3 mx-0.25 text-lg font-bold text-blue-100 bg-emerald-500 pt-2 mx-0.25 w-100">
+            <span class="mt-2 ml-4">${cityName}</span>
+            <div class="flex rounded-3xl text-lg font-bold pt-2 bg-gradient-to-r from-indigo-400/90 to-cyan-300/50">
+                <div class="flex flex-col text-center p-3 w-[80%]">
+                    <h4 class="text-2xl mt-3">${formattedTodayDate}</h4>
+                    <h1 class="my-4">${todayTemp} &degC</h1>
+                    <div class="flex justify-center gap-4">
+                        <p>Min: ${todayTempMin} &degC</p> 
+                        <p>Max: ${todayTempMax} &degC</p>
+                    </div>
+                </div>
+                <div class="flex flex-col p-3 mb-4 text-center">
+                    <img src="${todayWeatherIcon}" alt="weather-icon" class="w-20 h-20 mx-auto">
+                    ${todayWeatherDescription}
                 </div>
             </div>
-            <div class="flex flex-col p-3 mb-4 text-center">
-                <img src="${todayWeatherIcon}" alt="weather-icon" class="w-20 h-20 mx-auto">
-                ${todayWeatherDescription}
             </div>
-        </div>
-        <div class="flex mb-3 bg-gradient-to-r from-emerald-400 to-purple-300 rounded-lg w-[80%]">
+        <div class="flex mb-3 rounded-3xl text-lg font-bold pt-2 bg-gradient-to-r from-emerald-400/90 to-purple-300/80 w-100">
             <div class="flex flex-col text-center p-3 w-[80%]">
-                <h4 class="text-2xl">${formattedTomorrowDate}</h4>
+                <h4 class="text-2xl mt-2">${formattedTomorrowDate}</h4>
                 <h1 class="my-4">${tomorrowTemp} &degC</h1>
                 <div class="flex justify-center gap-4">
                     <p>Min: ${tomorrowTempMin} &degC</p> 
@@ -78,7 +101,7 @@ async function getForecast(url) {
                 ${tomorrowWeatherDescription}
             </div>    
         </div>
-        <div class="flex mb-3 bg-gradient-to-r from-cyan-400 to-indigo-300 rounded-lg w-[80%]">
+        <div class="flex mb-3 bg-gradient-to-r from-cyan-400/80 to-indigo-300/75 rounded-3xl text-lg font-bold pt-2 w-100">
             <div class="flex flex-col text-center p-3 w-[80%]">
                 <h4 class="text-2xl">${formattedDayAfterTomorrowDate}</h4>
                 <h1 class="my-4">${dayAfterTomorrowTemp} &degC</h1>
@@ -92,7 +115,7 @@ async function getForecast(url) {
                 ${dayAfterTomorrowWeatherDescription}
             </div>
         </div>
-        <div class="flex mb-3 bg-gradient-to-r from-purple-400 to-emerald-300 rounded-lg w-[80%]">
+        <div class="flex mb-3 bg-gradient-to-r from-purple-400/80 to-emerald-300/75 rounded-3xl text-lg font-bold pt-2 w-100">
             <div class="flex flex-col text-center p-3 w-[80%]">    
                 <h4 class="text-2xl">${formattedTwoDaysAfterTomorrowDate}</h4>
                 <h1 class="my-4">${twoDaysAfterTomorrowTemp} &degC</h1>
@@ -109,15 +132,13 @@ async function getForecast(url) {
     `;
 }
 
-getForecast('http://api.openweathermap.org/data/2.5/forecast?id=6173331&APPID=73e6dd36a2a073c414a629760ac198ce');
-
 
 function getWeatherIcon(description) {
     if (description.includes('cloud')) {
         return './images/cloud.png';
     } else if (description.includes('rain')) {
         return './images/rain.png';
-    } else if (description.includes('sun')) {
+    } else if (description.includes('sun') || description.includes('clear sky')) {
         return './images/sun.png';
     } else if (description.includes('snow')) {
         return './images/snow.png';
