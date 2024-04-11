@@ -20,9 +20,10 @@ $(document).ready(function () {
                     setTimeout(() => {
                         console.log("All operations completed successfully!");
                         window.location.href = "main.html";
+                        alert("Your information has been saved!")
                         resolve(); // Resolve the promise once operation is complete
                     }, 600);
-                    
+                
                 }).catch((error) => {
                     // Handle errors, if any
                     console.error("An error occurred during the operations", error);
