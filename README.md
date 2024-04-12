@@ -44,8 +44,8 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── airquality.html
-├── events.html
+├── airquality.html          # Show detailed information about air quality based on user's city
+├── events.html              # Display data from database
 ├── form.html
 ├── index.html               # landing HTML file, this is what users see when you come to url
 ├── location.html
@@ -57,7 +57,7 @@ Content of the project folder:
 ├── recommendations.html
 ├── tailwind.config.js
 ├── template.html
-└── weather.html
+└── weather.html            # Display weather in 4 days
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
@@ -75,21 +75,21 @@ It has the following subfolders and files:
     /pm25.png
     /profile icon.jpg
     /rain.png
-    /recommendations.jpeg
+    /recommendations.jpeg   # Background image for recommendation.html
     /sign-up-background-img.jpg
     /SO2.png
     /sun.png
-    /sunny.jpg
+    /sunny.jpg              # Background image for airquality.html
     /weather-background-img.jpg
 ├── scripts                  # Folder for scripts
-    /airquality.js                 # 
+    /airquality.js           # JS to fetch air quality api from Google, read user information for city's location from firebase database and display the information to airquality.html
     /authentication.js
-    /events.js
+    /events.js               # Read firebase database about event information
     /firebaseAPI_TEAM99.js
     /form.js
-    /location.js
+    /location.js             # JS to fetch air quality api and geocoding api from Google, write and read user information to new collection called 'favorite' and display the information to location.html
     /main.js
-    /recommendation.js
+    /recommendation.js       # JS to fetch air quality api from Google to get recommendation based on air quality, read user information for user group from firebase database and display the information to recommendation.html
     /script.js
     /skeleton.js
     /weather.js
